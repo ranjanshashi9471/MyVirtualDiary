@@ -1,0 +1,63 @@
+<%- include('partials/header') %>
+<!-- Pricing -->
+
+<section class="pt-0 pb-0" id="pricing">
+
+    <h2 class="section-heading">A Plan for EveryOne's Needs</h2>
+    <p>Simple and affordable price plans for you.</p>
+
+    <div class="row mx-5 px-5">
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Basic</h3>
+                </div>
+                <div class="card-body">
+                    <h2 class="price-text">Free</h2>
+                    <p>Unlimited Diary Writng</p>
+                    <p>Millitary Grade Encryption</p>
+                    <p>Unlimited App Usage</p>
+                    <button class="btn btn-block btn-outline-dark btn-lg" type="button">Sign Up</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Pro</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/pricing" method="post">
+                    <h2 class="price-text">₹20 / Month</h2>
+                    <p>Encryption Locking</p>
+                    <p>Custom Fonts & Colors</p>
+                    <p>PDF Export</p>
+                    <button class="btn btn-block btn-dark btn-lg" type="submit" name="btn" value="20">Sign Up</button>
+                    </form>
+<!--                    <a class="btn btn-block btn-dark btn-lg" href="/payments/20">Sign Up</a>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Pro+</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/pricing" method="post">
+                    <h2 class="price-text">₹30 / Month</h2>
+                    <p>Premium HandWritten Fonts</p>
+                    <p>Versions And Recovery</p>
+                    <p>Full Screen Zen-mode</p>
+                    <p>Premium Support</p>
+                    <button class="btn btn-lg btn-block btn-dark" type="submit" name="btn" name="30">Sign Up</button>
+                    </form>
+<!--                        <a class="btn btn-lg btn-block btn-dark" href="/payments/30"> Sign Up</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('partials/footer'); -%>

@@ -1,0 +1,70 @@
+<%- include("partials/header"); -%>
+
+<div class="" id="diary">
+    <div id="header">
+        <h3>Your Secrets</h3>
+        <!--        <a class="btn btn-outline-dark" href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> LogOut</a>-->
+        <button class="" id="add-entry"><i class="fa-solid fa-circle-plus"></i> Add Entry</button>
+    </div>
+    <div id="entries">
+        <% entries.forEach(element => { %>
+            <div class="entry">
+                <h3><%= element.title %></h3>
+                <p><%= element.content %></p>
+                <p><%= element.date %></p>
+                <input type="hidden" name="entryId" value="<%= element._id %>">
+            </div>
+        <% }) %>
+        <!-- Entries will be added dynamically with JavaScript -->
+    </div>
+</div>
+
+<div id="edit-modal">
+    <div id="edit-modal-content">
+        <form id="editEntryForm" action="/editEntry" method="post">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle">Edit Entry</h3>
+                <button type="button" class="close" id="cancel-edit-entry" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!--            <h2>Edit Entry</h2>-->
+
+            <label for="edit-input-title">Title:</label>
+            <input type="text" id="edit-input-title" name="title">
+
+            <label for="edit-input-content">Content:</label>
+            <textarea id="edit-input-content" name="content" rows="6"></textarea>
+            <input type="hidden" name="entryId" id="edit-modal-id">
+
+            <button type="button" class="btn btn-dark" id="save-edit-entry" name="btn1" value="update"><i
+                        class="fa-solid fa-circle-check"></i> Save
+            </button>
+            <button type="submit" class="btn btn-secondary" name="delete" value="delete"><i
+                        class="fa-sharp fa-solid fa-trash"></i> Delete
+            </button>
+        </form>
+    </div>
+</div>
+
+<div id="modal">
+    <div id="modal-content">
+        <form id="addEntryForm" action="/MyEntries" method="post">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle">Add Entry</h3>
+                <button type="button" class="close" id="cancel-entry" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!--            <label for="input-title">Title:</label>-->
+            <input type="text" id="input-title" name="title" placeholder="Title Here.">
+            <!--            <label for="input-content">Content:</label>-->
+            <textarea id="input-content" name="content" placeholder="Start Writing Here." rows="7"></textarea>
+            <a class="btn btn-dark" id="save-entry"><i class="fa-solid fa-plus"></i> Save</a>
+            <!--            <a class= "btn btn-secondary " id="cancel-entry"> Cancel</a>-->
+        </form>
+    </div>
+</div>
+<script src="index.js"></script>
+
+<%- include("partials/footer"); -%>

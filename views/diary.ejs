@@ -1,0 +1,65 @@
+
+<%- include("partials/header"); -%>
+
+<div class="container-fluid pt-0 pb-0">
+    <div class="row mb-3 ms-3 me-3">
+        <div class="col-md-7 ms-auto me-auto">
+            <div class="" id="diary-diary">
+                <div class="" id="header">
+                    <h3>Your Secrets</h3>
+                </div>
+                <div class="" id="entries">
+                    <% entries.forEach(element => { %>
+                        <div class="entry ">
+                            <h3><%= element.title %></h3>
+                            <p><%= element.content %></p>
+                            <p><%= element.date %></p>
+                            <input type="hidden" name="entryId" value="<%= element._id%>">
+                        </div>
+                    <% }) %>
+                    <!-- Entries will be added dynamically with JavaScript -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 ms-auto me-auto">
+            <div class="diary-container" id="diary-entry">
+                <form action="/MyEntries" method="post">
+<!--                    form action changes to /editEntry when any entry is clicked -->
+                <div class="title-wrap">
+                    <input type="text" class="diary-title" placeholder="Title Here" name="title" autocomplete="off">
+                    <hr>
+                    <label>Today</label>
+                    <hr>
+                </div>
+                <div class="line-wrap">
+                    <textarea class="line" placeholder="Start Writing Here." rows="13" name="content"></textarea>
+                </div>
+                    <input type="hidden" name="entryId" value="">
+                <div class="btn-div">
+                    <button type="submit" class="btn btn-success" name="btn" value="diary"><i class="fa-solid fa-plus"></i> Save</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<script src="index.js"></script>-->
+<script type="text/javascript">
+    const entryContainer = document.getElementsByClassName('entry');
+    const diaryEntry = document.getElementById("diary-entry");
+    const titleWrap = document.getElementsByClassName("title-wrap");
+    for(let i=0;i<entryContainer.length;i++){
+        entryContainer[i].addEventListener('click',()=>{
+            showEntry(i);
+            document.querySelector("form").setAttribute("action","/editEntry");
+        });
+    }
+    function showEntry(i){
+        diaryEntry.children[0][0].value = entryContainer[i].children[0].innerHTML;
+        diaryEntry.children[0][1].value = entryContainer[i].children[1].innerHTML;
+        document.querySelector("label").innerHTML = entryContainer[i].children[2].innerHTML;
+        diaryEntry.children[0][2].value = entryContainer[i].children[3].value;
+        // diaryEntry.children[0][3].innerHTML = "Edit";
+    }
+</script>
+<%- include("partials/footer"); -%>

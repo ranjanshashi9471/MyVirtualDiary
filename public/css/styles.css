@@ -1,0 +1,288 @@
+
+
+body {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  /*background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);*/
+  background-image: linear-gradient( 135deg, #FFD26F 10%, #3677FF 100%);
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+p {
+  color: #8f8f8f;
+}
+
+/* Heading */
+.big-heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem;
+  line-height: 1.5;
+  font-weight: bolder;
+}
+
+.section-heading {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.container-fluid {
+  padding: 2% 7%;
+}
+
+.colored-section {
+  color: #fff;
+}
+
+.white-section {
+  background-color: #E8ECEF;
+}
+
+/* title */
+
+#title .container-fluid {
+  text-align: left;
+  padding: 2% 7%;
+}
+
+/* Title Image */
+.title-image {
+  /*width: 60%;*/
+  /*transform: rotate(25deg);*/
+  /*position: absolute;*/
+  margin: auto;
+}
+
+/* Navigation Bar */
+.navbar {
+  padding: 0 0 0;
+}
+
+.nav-item {
+  padding: 0 2px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.navbar-brand {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Download Button */
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+/* Features Section */
+#features {
+  position: relative;
+  /* z-index: 1; */
+}
+
+.feature-title {
+  font-size: 1.5rem;
+}
+
+.feature-box {
+  padding: 4.5%;
+}
+
+.icon {
+  color: #97DEFF;
+  margin-bottom: 1rem;
+}
+
+.icon:hover {
+  color: #FFAACF;
+}
+
+/* Testimonial section */
+
+.testimonial-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+#press {
+  padding-bottom: 3%;
+}
+
+.press-logo {
+  width: 15%;
+  margin: 20px 20px 50px;
+}
+
+/* Pricing Section */
+
+.price-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.pricing-column {
+  padding: 3% 2%;
+}
+
+/* Footer */
+#footer p{
+  color: #000000;
+}
+
+.social-icons {
+  margin: 20px 10px;
+}
+
+/* Signin Form  */
+
+.centered {
+  padding-top: 200px;
+  text-align: center;
+}
+
+.signin-card{
+  background-color: #90a7c9b4;
+}
+
+
+@media (max-width: 1028px) {
+  #title {
+    text-align: center;
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+    width: 40%;
+  }
+}
+
+/*  Entry */
+
+#diary {
+  margin:2% 8%;
+  background-color: #90a7c9b4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#diary-diary{
+  /*margin:0% 5%;*/
+  background-color: #90a7c9b4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#add-entry {
+  background-color: #32a0b0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#entries {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.entry {
+  background-color: #ffffffaa;
+  background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.entry h3 {
+  margin-top: 0;
+}
+
+.entry p {
+  margin-bottom: 0;
+}
+
+#modal,#edit-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#modal input{
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+#modal-content,#edit-modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: linear-gradient( 135deg, #FFA8A8 10%, #FCFF00 100%);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#modal-content h2,#edit-modal-content h2 {
+  margin-top: 0;
+}
+
+#modal-content label,#edit-modal-content label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#modal-content input,#edit-modal-content input,#edit-modal-content textarea,
+#modal-content textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#pay-img{
+  width:80%;
+}
+
+#logo-img{
+  width:20%;
+}
